@@ -7,7 +7,7 @@
      <link rel="stylesheet" href="/css/style.css">
      <script src="/js/index.js" type="text/javascript"></script>
     <title>document</title>
-   
+   <script src="/js/index.js"></script>
 </head>
 <body>
     
@@ -35,6 +35,28 @@
             <button class="eq" onclick="Calulate()">ANS</button>
         </div>
     </div>
-    
+    <script>
+        let outputScreen = document.getElementById("output-screen");
+
+        function display(num){
+            outputScreen.value += num;
+        }
+        function Calulate(){
+            try{
+                outputScreen.value = eval(outputScreen.value);
+            }
+            catch(err){
+                alert("invalid")
+            }
+        }
+        function CLEAR()
+        {
+            outputScreen.value = 0;
+        }
+        function DEL()
+        {
+            outputScreen.value =outputScreen.value.slice(0,-1)
+        }
+    </script>
 </body>
 </html>
